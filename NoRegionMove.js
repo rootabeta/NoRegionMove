@@ -10,7 +10,7 @@
 
 (function() {
     'use strict';
-    var nations = ['volstrostia','someotherNation'];
+    var nations = ['volstrostia','someother_nation']; //DO NOT FORGET TO MAKE LOWERCASE AND UNDERSCORE FOR SPACES
     if (nations.includes(document.body.dataset.nname)) {
     // if (document.body.dataset.nname == 'volstrostia') { //Old code was limited to one nation
         document
