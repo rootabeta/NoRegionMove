@@ -3,16 +3,17 @@
 // @version      0.2
 // @namespace    dithpri
 // @description  prevent moving regions on defined nations
-// @author       dithpri stole with permsion by 9003
+// @author       rootabeta, based on https://github.com/jmikk/NS/blob/master/No%20Region%20Move.js
 // @noframes
 // @match        https://www.nationstates.net/*region=*
 // @match        https://www.nationstates.net/*region=*/
+// @run-at       document-end
 // ==/UserScript==
 
 (function() {
     'use strict';
     var nations = ['volstrostia','other_nation'];
-
+    
     var currentNation = document.body.dataset.nname;
     if (currentNation) {
         if (nations.includes(document.body.dataset.nname)) {
