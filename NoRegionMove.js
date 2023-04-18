@@ -11,7 +11,7 @@
 
 (function() {
     'use strict';
-    var nations = ['volstrostia','kalist_halishir','genderdruid','kingsbane','a_pawn','the_quiet','the_valhalla_hotel','alexs_region','dedsec_has_given_you_the_truth','lieutenant_murphy','a_polychromatic_inmate'];
+    var nations = ['volstrostia','other_nation'];
 
     var currentNation = document.body.dataset.nname;
     if (currentNation) {
