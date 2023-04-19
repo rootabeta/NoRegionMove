@@ -10,14 +10,36 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';    
-    if (document.getElementsByClassName("endorse button icon wa")) { //If endorse button exists at all
-      if (document.getElementsByClassName("endorse button icon wa danger")) { 
+    'use strict';
+
+    let chosenStyle = "";
+    let dataText = "";
+
+    if (document.getElementsByClassName("endorse button icon wa").length == 1) { //If endorse button exists at all
+      if (document.getElementsByClassName("endorse button icon wa danger").length == 1) {
+          //0 100 0 0.75
         console.log("Unendorse possible"); //GREEN - Endod and good to go!
-      } else { 
+          chosenStyle = "position:fixed;bottom:0;left:0;width:100%;height:5%;background:rgba(0,175,0,0.75);"; //green
+          dataText = "ENDORSED";
+      } else {
         console.log("Endorse possible"); //RED - Not endod
+        chosenStyle = "position:fixed;bottom:0;left:0;width:100%;height:5%;background:rgba(175,0,0,0.75);";
+        dataText = "NOT ENDORSED";
       }
-    } else { 
-      console.log("Endorsement not possible"); //YELLOW - Not endod, but not your fault (region mismatch, someone not WA, etc.)
+    } else {
+      console.log("Endorsement not possible"); //NO MSG - Not endod, but not your fault (region mismatch, someone not WA, etc.)
+      return;
     }
+
+    let divIEndo = document.createElement("div"); //Funny pun
+    divIEndo.id="endoStatus";
+    divIEndo.style=chosenStyle;
+
+    let makeCenter = document.createElement("center");
+    let didIText = document.createElement('h3');
+    didIText.textContent = dataText;
+    makeCenter.appendChild(didIText);
+    divIEndo.appendChild(makeCenter);
+
+    document.body.appendChild(divIEndo);
 })();
