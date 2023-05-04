@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Template Image Blocker
+// @name         Template Image Hider
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Block images from loading when template-overall=none is applied
