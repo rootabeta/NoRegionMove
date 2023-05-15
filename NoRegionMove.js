@@ -22,6 +22,7 @@
             .querySelectorAll('button[name="move_region"]')
             .forEach(function (el, idx) {
             el.disabled = true;
+            el.remove();
             });
         }
     } else { //Horrible, awful, evil hack. BUT IT WORKS!!!
@@ -33,6 +34,6 @@
         }
         var regionName = document.getElementsByName("region_name")[0].value; //pre_nsified :)
 
-        document.querySelectorAll('button[name="move_region"]').forEach(function (el, idx) { var buttonText = el.children[0].nextSibling.wholeText.toLowerCase().replace(/ /gi,"_") ; console.log(regionName); var nationName = buttonText.substring(5,buttonText.length-(regionName.length + 5)); console.log(nationName) ; if (nations.includes(nationName)) {el.disabled = true;} });
+        document.querySelectorAll('button[name="move_region"]').forEach(function (el, idx) { var buttonText = el.children[0].nextSibling.wholeText.toLowerCase().replace(/ /gi,"_") ; console.log(regionName); var nationName = buttonText.substring(5,buttonText.length-(regionName.length + 5)); console.log(nationName) ; if (nations.includes(nationName)) {el.disabled = true; el.remove(); } });
     }
 })();
